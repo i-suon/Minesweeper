@@ -171,13 +171,9 @@ public class Board extends JPanel {
             if (!marked.contains(new_marked)) {
                 g.drawImage(flagimg, x, y, this);
                 marked.add(new_marked);
-                System.out.println("false");
-                System.out.println(marked);
             } else {
                 repaint(x, y, 30, 30);
                 marked.remove(new_marked);
-                System.out.println("true");
-                System.out.println(marked);
             }
         }
     }
@@ -320,7 +316,6 @@ public class Board extends JPanel {
 
                                 int newX = (x + i);
                                 int newY = (y + j);
-                                //g.setColor(Color.pink);
                                 g.fill3DRect(newX, newY, 30, 30, false);
 
                                 switch (mines_nearby) {
@@ -375,7 +370,6 @@ public class Board extends JPanel {
         for (ArrayList i : mines) {
             int x = (int)i.get(0);
             int y = (int)i.get(1);
-            //g.setColor(Color.pink);
             g.fill3DRect(x, y, 30, 30, false);
             g.drawImage(mineimg, x, y, this);
         }
